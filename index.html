@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>League of Legends Player Search</title>
+	<title>Fortnite Player Search</title>
 	<meta charset="utf-8">
-	<meta name="description" content="Search League of Legends for player stats">
+	<meta name="description" content="Search Fortnite for player stats">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Belgrano" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 <body>
 	<header role="banner">
 		<div class="container">
-			<h1>Search for your player stats on League of Legends</h1>
+			<h1>Search for your player stats on Fornite</h1>
 		</div>
 		
 	</header>
 	<main role="main">
+	<div class="container">
 		<form for ="nameSearch">
-			<label for="nameSearch"><input type="text" name="nameSearch" placeholder="Kyle226"></label>
-			<button type="submit">Search for the player</button>
+			<label for="nameSearch"><input type="text" name="nameSearch" placeholder="KKJZ"></label>
+			<select>
+				<option value="xbox-one">Xbox One</option>
+				<option value="Ps4">Playstaion 4</option>
+				<option value="PC">Computer</option>
+			</select>
+			<button type="submit" class="btn btn-warning">Search for the player</button>
 		</form>
+	</div>
 		<div class="results">
-			
+			<div class="container">
+				<div class="list-group center-text">
+	  				<button type="button" class="list-group-item list-group-item-action">Cras justo odio</button>
+	  				<button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+	  				<button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+	  				<button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+	  				<button type="button" class="list-group-item list-group-item-action">Vestibulum at eros</button>
+				</div>
+			</div>
+		</div>
+		<div class="player-stats">
+			<div class="container">
+				
+			</div>	
 		</div>
 	</main>
 </body>
-<script src="jquery-3.3.1.min.js"></script>
-<script src="app.js"></script>
+<script type="javascript" src="app.js"></script>
 </html>

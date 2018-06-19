@@ -3,19 +3,22 @@
 }
 
 body {
-	font-family: 'Belgrano', serif;
-	color: gold;
-	background-color: black
+	font-family: 'Anton', sans-serif;
 
 }
 
-div.container {
+h1 {
 	margin: auto;
 	text-align: center;
+	padding: 10px;
 }
 
 form {
 	margin: auto;
 	text-align: center;
-	font-family: 'Belgrano', serif;
+	font-family: 'Anton', sans-serif;
+}
+
+.center-text {
+	text-align: center;
 }

@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Belgrano', serif;
+	color: gold;
+	background-color: black
+
+}
+
+div.container {
+	margin: auto;
+	text-align: center;
+}
+
+form {
+	margin: auto;
+	text-align: center;
+	font-family: 'Belgrano', serif;
+}

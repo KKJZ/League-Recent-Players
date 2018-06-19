@@ -1,3 +1,3 @@
-const apiKey = 'RGAPI-846886ba-070b-401a-8108-01e87d06c8e5'
+const FORTNITE_ENDPOINT = https://api.fortnitetracker.com/v1/profile/{platform}/{epic-nickname}
 
-//on submit send the search to Riot api and return a list of players with their mastery levels, profile levels and their player icon
+//search though the fortnite api and return stats about your player on which ever system you told the search

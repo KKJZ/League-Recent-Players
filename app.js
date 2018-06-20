@@ -2,6 +2,7 @@ const FORTNITE_ENDPOINT = 'https://api.fortnitetracker.com/v1/profile/{platform}
 const apiKey = '54456bf0-d031-45f1-b056-cf9105de92c5'
 
 //search though the fortnite api and return stats about your player on which ever system you told the search
+//return stats for each mode solo, duo, squad and lifetime
 
 //make results list change actice 
 function handleButtonList () {

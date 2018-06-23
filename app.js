@@ -1,7 +1,12 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
 const apiKey = 'RGAPI-46060c3b-046e-4fbf-9fd1-b5ead5a9d24a';
 
+<<<<<<< HEAD
 //search though the LoL api and return stats about your player on which ever system you told the search
+=======
+//search though the fortnite api and return stats about your player on which ever system you told the search
+//return stats for each mode solo, duo, squad and lifetime
+>>>>>>> 813455d1c53f28e398610c839b329a5d86da5162
 
 //handle the submit button 
 function handleSubmit () {
@@ -76,3 +81,7 @@ function test (test) {
 }
 onLoad();
 
+<<<<<<< HEAD
+=======
+onLoad();
+>>>>>>> 813455d1c53f28e398610c839b329a5d86da5162

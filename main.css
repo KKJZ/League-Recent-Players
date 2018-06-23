@@ -3,11 +3,13 @@
 }
 
 body {
-	font-family: 'Anton', sans-serif;
-
+	font-family: 'Carrois Gothic SC', sans-serif;
+	background-image: url('http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg');
+	text-shadow: 2px 2px black;
+	color: white
 }
 
-h1 {
+h1, h2, h3 {
 	margin: auto;
 	text-align: center;
 	padding: 10px;
@@ -21,4 +23,16 @@ form {
 
 .center-text {
 	text-align: center;
+}
+
+.border {
+	border: black 5px solid;
+  	background-color: rgba(50, 31, 31, 0.8);
+}
+
+.icon {
+	width: 64px;
+	height: 64px;
+	display: inline-block;
+	margin: auto:;
 }

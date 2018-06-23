@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Fortnite Player Search</title>
+	<title>LoL Player Stats</title>
 	<meta charset="utf-8">
-	<meta name="description" content="Search Fortnite for player stats">
+	<meta name="description" content="Search League of Legends for player stats">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
 </head>
 <body>
 	<header role="banner">
 		<div class="container">
-			<h1>Search for your player stats on Fornite</h1>
+			<h1>Search for your player stats on Leauge of Legends</h1>
 		</div>
 		
 	</header>
 	<main role="main">
 	<div class="container">
 		<form for ="nameSearch">
-			<label for="nameSearch"><input type="text" name="nameSearch" placeholder="KKJZ"></label>
-			<select>
-				<option value="xbox-one">Xbox One</option>
-				<option value="Ps4">Playstaion 4</option>
-				<option value="PC">Computer</option>
-			</select>
-			<button type="submit" class="btn btn-warning">Search for the player</button>
+			<label for="nameSearch"><input type="text" name="nameSearch" placeholder="Kyle226"></label>
+			<button type="submit" class="btn btn-primary">Search for the player</button>
 		</form>
-	</div>
-		<div class="results">
-			<div class="container">
-				<div class="list-group center-text">
-	  				<button type="button" class="list-group-item list-group-item-action">Cras justo odio</button>
-	  				<button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-	  				<button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-	  				<button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-	  				<button type="button" class="list-group-item list-group-item-action">Vestibulum at eros</button>
-				</div>
-			</div>
-		</div>
 		<div class="player-stats">
 			<div class="container">
+				<h1><img src="http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Xbox-icon.png" alt='xbox one logo' class='icon'>[Player name] Level:</h1>
+				<!--<div class="row">
+					<div class="col-md border">
+						<h3>Solo</h3>
+						<ul>
+							<li>Kills: 0</li>
+							<li>Top3: 0</li>
+							<li>Top10: 0</li>
+							<li>Kill/Death Ratio: 0.95</li>
+							<li>Time Played: 14h, 27min</li>
+						</ul>
+					</div>
+					<div class="col-md border">
+						<h3>Duo</h3>
+						<ul>
+							<li>Kills: 0</li>
+							<li>Top3: 0</li>
+							<li>Top10: 0</li>
+							<li>Kill/Death Ratio: 1.5</li>
+							<li>Time Plated: 1H, 15min</li>
+						</ul>
+					</div>
+					<div class="col-md border">
+						<h3>Squad</h3>
+						<ul>
+							<li>Kills: 0</li>
+							<li>Top3: 0</li>
+							<li>Top10: 0</li>
+							<li>Kill/Death Ratio: 2.0</li>
+							<li>Time Played: 24h, 15min</li>
+						</ul>
+					</div>
+				</div> -->
+				<!--<div class="row">
+					<div class="col-xl border">
+						<h3>Lifetime</h3>
+						<ul>
+							<li>Kills: 0</li>
+							<li>Top3: 0</li>
+							<li>Top10: 0</li>
+							<li>Kill/Death Ratio: 2.0</li>
+							<li>Time Played: 24h, 15min</li>
+						</ul>
+					</div>
+				</div> -->
 				
 			</div>	
 		</div>
 	</main>
+<script type="text/javascript" src="app.js"></script>
 </body>
-<script type="javascript" src="app.js"></script>
 </html>

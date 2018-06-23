@@ -5,17 +5,16 @@ const apiKey = 'RGAPI-46060c3b-046e-4fbf-9fd1-b5ead5a9d24a';
 
 //handle the submit button 
 function handleSubmit () {
-	$('div.list-group').on('submit', function(e) {
+	$('.js-search-form').on('submit', function(e) {
 		e.preventDefault();
-		console.log(this);
-		$(this).css(active);
+		const name = $('input').val();
+		getName(name, getInfo);
 	});
 }
 
 //first make a call to the endpoint with what the user entered
 function getName (name, callback) {
 	const nameURL = RIOT_ENDPOINT + `/lol/summoner/v3/summoners/by-name/${name}?api_key=${apiKey}`;
-	console.log(nameURL);
 	const settings = {
 		url: nameURL,
 		type: 'GET',
@@ -27,14 +26,16 @@ function getName (name, callback) {
 }
 
 //render stats to screen
-function getStats (name) {
+function getInfo (name) {
 	const playerId = name.id;
 	const playerName = name.name;
 	const summonerLevel = name.summonerLevel;
 	const profileIcon = name.profileIconId;
 	renderName(playerName, summonerLevel, profileIcon);
+	//getStats();
 }
 
+//get icon from the icon method
 function getIcon (icon, callback) {
 	const iconURL = RIOT_ENDPOINT + `/lol/static-data/v3/profile-icons?api_key=${apiKey}`
 	const settings = {
@@ -47,27 +48,25 @@ function getIcon (icon, callback) {
 	$.ajax(settings);
 }
 
+//render name level and icon to screen
 function renderName (name, level, icon) {
-	getIcon(icon, test);
+	console.log(name);
+	console.log(level);
+	console.log(icon);
 }
 
+//render stats to screen
+function renderStats (argument) {
+	// body...
+}
 //If we received an error
 function forFailure (name) {
 	console.log(name);
 }
 
-//handle the submit button 
-function handleSubmit () {
-	$('div.list-group').on('submit', function(e) {
-		e.preventDefault();
-		console.log(this);
-		$(this).css(active);
-	});
-}
-
 function onLoad () {
 	handleSubmit();
-	getName("Kyle226", getStats);
+	//getName("Kyle226", getStats);
 }
 
 function test (test) {

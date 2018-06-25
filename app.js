@@ -1,10 +1,19 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
 const apiKey = 'RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640';
 const iconURL = RIOT_ENDPOINT + `/lol/static-data/v3/profile-icons?en_US&api_key=${apiKey}`;
-
+let iconList;
 //make the icon obj
-//const iconObj = $.ajax({url: iconURL, type: 'GET', dataType: 'json'});
-//const test = iconObj.responseJSON;
+const iconObj = $.ajax({
+	url: iconURL,
+	type: 'GET',
+	dataType: 'jsonp',
+	success: function (i) {
+		console.log(i);
+		iconList = i;
+	}
+});
+console.log(iconObj);
+console.log(iconList);
 
 //search though the LoL api and return stats about your player on which ever system you told the search
 

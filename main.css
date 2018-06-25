@@ -34,5 +34,6 @@ form {
 	width: 64px;
 	height: 64px;
 	display: inline-block;
-	margin: auto:;
+	margin: auto;
+	font-size: 10px;
 }

@@ -3,17 +3,17 @@ const apiKey = 'RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640';
 const iconURL = RIOT_ENDPOINT + `/lol/static-data/v3/profile-icons?en_US&api_key=${apiKey}`;
 let iconList;
 //make the icon obj
-const iconObj = $.ajax({
-	url: iconURL,
-	type: 'GET',
-	dataType: 'jsonp',
-	success: function (i) {
-		console.log(i);
-		iconList = i;
-	}
-});
-console.log(iconObj);
-console.log(iconList);
+// const iconObj = $.ajax({
+	// url: iconURL,
+	// type: 'GET',
+	// dataType: 'jsonp',
+	// success: function (i) {
+		// console.log(i);
+		// iconList = i.data;
+	// }
+// });
+// console.log(iconObj);
+// console.log(iconList);
 
 //search though the LoL api and return stats about your player on which ever system you told the search
 
@@ -22,6 +22,7 @@ function handleSubmit () {
 	$('main').on('submit', function(e) {
 		e.preventDefault();
 		const name = $('input').val();
+		$('input').val('')
 		console.log(`This was the input by user: ${name}`);
 		getName(name, getInfo);
 	});
@@ -52,23 +53,41 @@ function getInfo (name) {
 	console.log(`Icon number: ${profileIcon}`);
 	//const iconURL = iconObj.responseJSON.data[profileIcon]
 	renderName(playerName, summonerLevel, profileIcon);
-	//getStats(playerID);
+	getRecentMatches(playerId, getMatchList);
 }
 
 
 //ajax for stats
-function getStats (argument) {
-	// for each object in matches we want to figure out your main role in 'lane'
-	// also we want the champion id to see what champ you have been playing most
-	// accountID to match get the gamesID from match list then each gameid call match to know if they won
+function getRecentMatches (accountId, callback) {
+	//show last three games with player names and champion they were playing
+	//we need for each player get summoner name and profile icon also participant Id
+	//when you click on a name you are taken to thier recent matches page
+	//Makes list of last three https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/35368642?beginIndex=0&endIndex=3
+	$.ajax({
+		url: RIOT_ENDPOINT + `/lol/match/v3/matchlists/by-account/${accountId}?beginIndex=0&endIndex=3&api_key=RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640`, 
+		type: 'GET',
+		dataType: 'json',
+		success: callback
+	});
 }
+	//need this from getMatch
+	//participantIdentities.participantId for thier Id
+	//participantIdentities.player.summonerName
+	//participantIdentities.player.profileIcon
+	//gamemode
+function getMatchList (matchList) {
+	console.log(matchList);
+}
+
 
 //render name level and icon to screen
 function renderName (name, level, icon) {
 	const result = 
-	`<div class="player-stats">
-			<div class="container">
-				<h1><img src=${icon} alt='Player Icon' class='icon'>${name} Level: ${level}</h1>`;
+	`
+	<div class="container">
+		<h1><img src=${icon} alt='Player Icon' class='icon'>${name} Level: ${level}</h1>
+	</div>
+	`;
 	$('div.player-stats').html(result);
 }
 
@@ -80,6 +99,7 @@ function renderScreen () {
 //If we received an error
 function forFailure (name) {
 	console.log(name);
+	$('div.player-stats').html(`<h1 class='border'>The name you entered was not found try and different one or make sure the name was spelled correctly</h1>`);
 }
 
 function onLoad () {

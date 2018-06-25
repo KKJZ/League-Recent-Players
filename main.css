@@ -20,7 +20,8 @@ body:before {
 
 body {
 	font-family: 'Carrois Gothic SC', sans-serif;
-	background-image: url('http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg');
+	background-image: url('http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg') no-repeat center fixed;
+	background-size: cover;
 	text-shadow: 2px 2px black;
 	color: white
 }

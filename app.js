@@ -166,7 +166,7 @@ function renderScreen (obj, num) {
 //If we received an error
 function forFailure (name) {
 	console.log(name);
-	$('div.player-stats').html(`<h1 class='border'>The name you entered was not found try and different one or make sure the name was spelled correctly</h1>`);
+	$('div.player-stats').html(`<h1 class='border'>The name you entered was not found. Try a different name or make sure the name was spelled correctly</h1>`);
 }
 
 function onLoad () {

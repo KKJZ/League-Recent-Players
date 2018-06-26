@@ -1,19 +1,8 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
 const apiKey = 'RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640';
-const iconURL = RIOT_ENDPOINT + `/lol/static-data/v3/profile-icons?en_US&api_key=${apiKey}`;
-let iconList;
-//make the icon obj
-// const iconObj = $.ajax({
-	// url: iconURL,
-	// type: 'GET',
-	// dataType: 'jsonp',
-	// success: function (i) {
-		// console.log(i);
-		// iconList = i.data;
-	// }
-// });
-// console.log(iconObj);
-// console.log(iconList);
+
+//add the id for the icon + .png
+const iconURL = `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/`;
 
 //search though the LoL api and return stats about your player on which ever system you told the search
 
@@ -43,7 +32,8 @@ function getName (name, callback) {
 
 //render stats to screen
 function getInfo (name) {
-	const playerId = name.id;
+	console.log(name);
+	const playerId = name.accountId;
 	console.log(`Account ID: ${playerId}`);
 	const playerName = name.name;
 	console.log(`Player name: ${playerName}`);
@@ -64,28 +54,46 @@ function getRecentMatches (accountId, callback) {
 	//when you click on a name you are taken to thier recent matches page
 	//Makes list of last three https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/35368642?beginIndex=0&endIndex=3
 	$.ajax({
-		url: RIOT_ENDPOINT + `/lol/match/v3/matchlists/by-account/${accountId}?beginIndex=0&endIndex=3&api_key=RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640`, 
+		url: RIOT_ENDPOINT + `/lol/match/v3/matchlists/by-account/${accountId}?beginIndex=0&endIndex=3&api_key=${apiKey}`, 
 		type: 'GET',
 		dataType: 'json',
 		success: callback
 	});
+}
+
+function getMatchList (matchList) {
+	let game1 = matchList.matches[0].gameId;
+	let game2 = matchList.matches[1].gameId;
+	let game3 = matchList.matches[2].gameId;
+	let games = [game1, game2, game3]
+	console.log(`This is the game ID array: ${games}`);
+	//next i need to take games array and put each one into the getMatch 
+	getMatches(games);
 }
 	//need this from getMatch
 	//participantIdentities.participantId for thier Id
 	//participantIdentities.player.summonerName
 	//participantIdentities.player.profileIcon
 	//gamemode
-function getMatchList (matchList) {
-	console.log(matchList);
+function getMatches (gameArray) {
+	gameArray.forEach(function (id) {
+		$.ajax({
+			url: RIOT_ENDPOINT + `/lol/match/v3/matches/${id}?api_key=apiKey`,
+			type: 'GET',
+			dataType: 'json',
+			success: function (e) {
+				console.log(e);
+			}
+		})
+	})
 }
-
 
 //render name level and icon to screen
 function renderName (name, level, icon) {
 	const result = 
 	`
-	<div class="container">
-		<h1><img src=${icon} alt='Player Icon' class='icon'>${name} Level: ${level}</h1>
+	<div class="container border">
+		<h1><img src=${iconURL+ icon}.png alt='Player Icon' class='icon'> ${name} Level: ${level}</h1>
 	</div>
 	`;
 	$('div.player-stats').html(result);

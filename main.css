@@ -43,6 +43,10 @@ button {
 	text-align: center !important;
 }
 
+.hidden {
+	display: none;
+}
+
 .center-text {
 	text-align: center;
 }

@@ -21,12 +21,21 @@
 	<div class="container">
 		<form for ="nameSearch">
 			<label for="nameSearch"><input type="text" name="nameSearch" placeholder="Summoner name"></label>
-			<button type="submit" class="btn btn-primary">Search for the player</button>
+			<button type="submit" class="btn btn-primary submit">Search for the player</button>
+			<button type="reset" class="btn btn-danger reset hidden">Reset</button>
 		</form>
 		<div class="player-stats">
 		</div>
-		<div class='player-history'>
-			<h2>Last 3 Matches</h2>
+		<div class="matches">
+		</div>
+		<div class="row">
+			<div class='game-1 col-md'>
+			</div>
+			<div class="game-2 col-md">
+			</div>
+			<div class="game-3 col-md">
+			</div>
+			<!-- <h2>Last 3 Matches</h2>
 			<div class="row">
 				<div class="col-md border">
 					<h3>Game 1</h3>
@@ -93,9 +102,9 @@
 						  <button value="player4" type="button" class="list-group-item list-group-item-action">Player 4 <img src=${iconURL+ icon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>
-				</div>
-			</div>  	
+				</div> -->
 		</div>
+	</div>
 	</main>
 <script type="text/javascript" src="app.js"></script>
 </body>

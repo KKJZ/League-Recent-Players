@@ -124,6 +124,13 @@ function renderName (name, level, icon) {
 
 //render stats to screen
 function renderScreen (obj, num) {
+	let queueId = obj.queueId;
+	console.log(queueId);
+	if (queueId === (470)){
+		renderScreen3v3(obj, num);
+	}
+
+	else {
 	console.log(obj, num)
 	let player1 = obj.participantIdentities[0].player;
 	let player2 = obj.participantIdentities[1].player;
@@ -161,8 +168,39 @@ function renderScreen (obj, num) {
 					</div>	
 	`;
 	$(`.game-${num}`).html(results).addClass('border');
-}
+}}
 
+//render 3v3
+function renderScreen3v3 (obj, num) {
+	let player1 = obj.participantIdentities[0].player;
+	let player2 = obj.participantIdentities[1].player;
+	let player3 = obj.participantIdentities[2].player;
+	let player4 = obj.participantIdentities[3].player;
+	let player5 = obj.participantIdentities[4].player;
+	let player6 = obj.participantIdentities[5].player;
+	const results = `
+					<h3>Game ${num}</h3>
+					<h4>${obj.gameMode}</h4>
+					<div class="col-m">
+						<div class="list-group">
+						<h4>Team 1</h4>
+						  <button value="${player1.summonerName}" type="button" class="list-group-item list-group-item-action">${player1.summonerName}() <img src=${iconURL+ player1.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player2.summonerName}" type="button" class="list-group-item list-group-item-action">${player2.summonerName}() <img src=${iconURL+ player2.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player3.summonerName}" type="button" class="list-group-item list-group-item-action">${player3.summonerName}() <img src=${iconURL+ player3.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						</div>
+					</div>
+					<div class="col-m">
+						<div class="list-group">
+						<h4>Team 2</h4>
+						  <button value="${player4.summonerName}" type="button" class="list-group-item list-group-item-action">${player4.summonerName}() <img src=${iconURL+ player4.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player5.summonerName}" type="button" class="list-group-item list-group-item-action">${player5.summonerName}() <img src=${iconURL+ player5.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player6.summonerName}" type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						</div>
+					</div>	
+	`
+	$(`.game-${num}`).html(results).addClass('border');
+
+}
 //If we received an error
 function forFailure (name) {
 	console.log(name);

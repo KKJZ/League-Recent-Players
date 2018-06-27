@@ -42,14 +42,14 @@ function handleReset () {
 	})
 }
 
-//Handle if a name of the recent player list is pressed
-function handleNamePress () {
-	$('.result-name').on('click', function(e) {
-		e.preventDefault();
-		const name = this.val();
-		console.log(name)
-	})
-}
+// Handle if a name of the recent player list is pressed
+// function handleNamePress () {
+// 	$('.result-name').on('click', function(e) {
+// 		e.preventDefault();
+// 		const name = this.val();
+// 		console.log(name)
+// 	})
+// }
 
 //first make a call to the endpoint with what the user entered
 function getName (name, callback) {
@@ -224,7 +224,7 @@ function forFailure (name) {
 function onLoad () {
 	handleSubmit();
 	handleReset();
-	handleNamePress();
+	// handleNamePress();
 	getName('Kyle226', getInfo);
 }
 

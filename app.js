@@ -1,37 +1,53 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
-const apiKey = 'RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640';
+const apiKey = 'RGAPI-34be648e-7433-4f14-b7c7-d3e78e2de5b9';
 
 //add the id for the icon + .png
 const iconURL = `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/`;
 
 //search though the LoL api and return stats about your player on which ever system you told the search
-
+//add text how to use the app start lesson 3 then lesson 1
 //handle the submit button 
 function handleSubmit () {
 	$('main').on('submit', function(e) {
 		e.preventDefault();
-		$('input').addClass('hidden');
-		$('button.submit').addClass('hidden');
+		// $('input').addClass('hidden');
+		// $('button.submit').addClass('hidden');
+		$('h1.main').removeClass('main');
+		$('h2.main').removeClass('main');
 		$('button.reset').removeClass('hidden');
 		const name = $('input').val();
 		$('input').val('');
+		$('.game-1').html('');
+		$('.game-2').html('');
+		$('.game-3').html('');				
 		console.log(`This was the input by user: ${name}`);
 		getName(name, getInfo);
 	});
 }
 
 function handleReset () {
-	$('.btn-danger').on('click', function(e){
+	$('.btn-danger').on('click', function(e) {
 		e.preventDefault();
-		$('input').removeClass('hidden');
-		$('button.submit').removeClass('hidden');
+		// $('input').removeClass('hidden');
+		// $('button.submit').removeClass('hidden');
+		$('h1.main').addClass('main');
+		$('h2.main').addClass('main');
 		$('button.reset').addClass('hidden');
 		$('input').val('');
-		$('div.player-stats').html('');
+		$('div.player-name').html('');
 		$('.matches').html('')
 		$('.game-1').html('').removeClass('border');
 		$('.game-2').html('').removeClass('border');
 		$('.game-3').html('').removeClass('border');
+	})
+}
+
+//Handle if a name of the recent player list is pressed
+function handleNamePress () {
+	$('.result-name').on('click', function(e) {
+		e.preventDefault();
+		const name = this.val();
+		console.log(name)
 	})
 }
 
@@ -100,7 +116,7 @@ function getMatches (gameArray) {
 	let num = 0;
 	gameArray.forEach(function (id) {
 		$.ajax({
-			url: RIOT_ENDPOINT + `/lol/match/v3/matches/${id}?api_key=RGAPI-22d88278-de54-4e65-a3f7-9a215a01c640`,
+			url: RIOT_ENDPOINT + `/lol/match/v3/matches/${id}?api_key=${apiKey}`,
 			type: 'GET',
 			dataType: 'json',
 			success: function (e) {
@@ -119,19 +135,18 @@ function renderName (name, level, icon) {
 		<h1><img src=${iconURL+ icon}.png alt='Player Icon' class='icon'> ${name} Level: ${level}</h1>
 	</div>
 	`;
-	$('div.player-stats').html(result);
+	$('div.player-name').html(result);
 }
 
 //render stats to screen
 function renderScreen (obj, num) {
 	let queueId = obj.queueId;
-	console.log(queueId);
+	console.log(`Checking queueId: ${queueId}`);
 	if (queueId === (470)){
 		renderScreen3v3(obj, num);
 	}
 
 	else {
-	console.log(obj, num)
 	let player1 = obj.participantIdentities[0].player;
 	let player2 = obj.participantIdentities[1].player;
 	let player3 = obj.participantIdentities[2].player;
@@ -142,7 +157,6 @@ function renderScreen (obj, num) {
 	let player8 = obj.participantIdentities[7].player;
 	let player9 = obj.participantIdentities[8].player;
 	let player10 = obj.participantIdentities[9].player;
-	console.log(player1);
 	const results = `
 					<h3>Game ${num}</h3>
 					<h4>${obj.gameMode}</h4>
@@ -184,17 +198,17 @@ function renderScreen3v3 (obj, num) {
 					<div class="col-m">
 						<div class="list-group">
 						<h4>Team 1</h4>
-						  <button value="${player1.summonerName}" type="button" class="list-group-item list-group-item-action">${player1.summonerName}() <img src=${iconURL+ player1.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player2.summonerName}" type="button" class="list-group-item list-group-item-action">${player2.summonerName}() <img src=${iconURL+ player2.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player3.summonerName}" type="button" class="list-group-item list-group-item-action">${player3.summonerName}() <img src=${iconURL+ player3.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player1.summonerName}() <img src=${iconURL+ player1.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player2.summonerName}() <img src=${iconURL+ player2.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player3.summonerName}() <img src=${iconURL+ player3.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>
 					<div class="col-m">
 						<div class="list-group">
 						<h4>Team 2</h4>
-						  <button value="${player4.summonerName}" type="button" class="list-group-item list-group-item-action">${player4.summonerName}() <img src=${iconURL+ player4.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player5.summonerName}" type="button" class="list-group-item list-group-item-action">${player5.summonerName}() <img src=${iconURL+ player5.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player6.summonerName}" type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player4.summonerName}() <img src=${iconURL+ player4.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player5.summonerName}() <img src=${iconURL+ player5.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>	
 	`
@@ -204,12 +218,14 @@ function renderScreen3v3 (obj, num) {
 //If we received an error
 function forFailure (name) {
 	console.log(name);
-	$('div.player-stats').html(`<h1 class='border'>The name you entered was not found. Try a different name or make sure the name was spelled correctly</h1>`);
+	$('div.player-name').html(`<h1 class='border'>The name you entered was not found. Try a different name or make sure the name was spelled correctly</h1>`);
 }
 
 function onLoad () {
 	handleSubmit();
 	handleReset();
+	handleNamePress();
+	getName('Kyle226', getInfo);
 }
 
 onLoad();

@@ -1,4 +1,4 @@
-# League-Player-Stats
+# League-Recent-Players
 Give users a view of players from previous matches.
 
 Allows users to search different summoners for thier last matches

@@ -1,5 +1,5 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
-const apiKey = 'RGAPI-8b1f9def-6c82-4b2f-9717-5a8994ea3cc6';
+const apiKey = 'RGAPI-f4b73b2d-5492-4181-9cfc-e7a737644783';
 
 //add the id for the icon + .png
 const iconURL = `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/`;

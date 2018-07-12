@@ -173,10 +173,10 @@ function renderScreen (obj, num) {
 					<div class="col-m">
 						<div class="list-group">
 						<h4>Team 2</h4>
-						  <button value="${player6.summonerName}" type="button" class="list-group-item list-group-item-action">${player5.summonerName}() <img src=${iconURL+ player5.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player7.summonerName}" type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player8.summonerName}" type="button" class="list-group-item list-group-item-action">${player7.summonerName}() <img src=${iconURL+ player7.profileIcon}.png alt='Player Icon' class='smallicon'></button>
-						  <button value="${player9.summonerName}" type="button" class="list-group-item list-group-item-action">${player8.summonerName}() <img src=${iconURL+ player8.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player6.summonerName}" type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player7.summonerName}" type="button" class="list-group-item list-group-item-action">${player7.summonerName}() <img src=${iconURL+ player7.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player8.summonerName}" type="button" class="list-group-item list-group-item-action">${player8.summonerName}() <img src=${iconURL+ player8.profileIcon}.png alt='Player Icon' class='smallicon'></button>
+						  <button value="${player9.summonerName}" type="button" class="list-group-item list-group-item-action">${player9.summonerName}() <img src=${iconURL+ player9.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						  <button value="${player10.summonerName}" type="button" class="list-group-item list-group-item-action">${player10.summonerName}() <img src=${iconURL+ player10.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>	
@@ -225,7 +225,7 @@ function onLoad () {
 	handleSubmit();
 	handleReset();
 	// handleNamePress();
-	getName('Kyle226', getInfo);
+	// getName('Kyle226', getInfo);
 }
 
 onLoad();

@@ -1,5 +1,5 @@
 const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
-const apiKey = 'RGAPI-c1b0c55c-46b2-4a26-92cb-1f97a4f1c553';
+const apiKey = 'RGAPI-51623e85-c00d-4650-bd7d-ed35e24a3aa0';
 
 //add the id for the icon + .png
 const iconURL = `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/`;
@@ -160,7 +160,7 @@ function renderScreen (obj, num) {
 	const results = `
 					<h3>Game ${num}</h3>
 					<h4>${obj.gameMode}</h4>
-					<div class="col-m">
+					<div>
 						<div class="list-group">
 						<h4>Team 1</h4>
 						  <button value="${player1.summonerName}" type="button" class="list-group-item list-group-item-action">${player1.summonerName}() <img src=${iconURL+ player1.profileIcon}.png alt='Player Icon' class='smallicon'></button>
@@ -170,7 +170,7 @@ function renderScreen (obj, num) {
 						  <button value="${player5.summonerName}" type="button" class="list-group-item list-group-item-action">${player5.summonerName}() <img src=${iconURL+ player5.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>
-					<div class="col-m">
+					<div>
 						<div class="list-group">
 						<h4>Team 2</h4>
 						  <button value="${player6.summonerName}" type="button" class="list-group-item list-group-item-action">${player6.summonerName}() <img src=${iconURL+ player6.profileIcon}.png alt='Player Icon' class='smallicon'></button>
@@ -195,7 +195,7 @@ function renderScreen3v3 (obj, num) {
 	const results = `
 					<h3>Game ${num}</h3>
 					<h4>${obj.gameMode}</h4>
-					<div class="col-m">
+					<div>
 						<div class="list-group">
 						<h4>Team 1</h4>
 						  <button type="button" class="list-group-item list-group-item-action">${player1.summonerName}() <img src=${iconURL+ player1.profileIcon}.png alt='Player Icon' class='smallicon'></button>
@@ -203,7 +203,7 @@ function renderScreen3v3 (obj, num) {
 						  <button type="button" class="list-group-item list-group-item-action">${player3.summonerName}() <img src=${iconURL+ player3.profileIcon}.png alt='Player Icon' class='smallicon'></button>
 						</div>
 					</div>
-					<div class="col-m">
+					<div>
 						<div class="list-group">
 						<h4>Team 2</h4>
 						  <button type="button" class="list-group-item list-group-item-action">${player4.summonerName}() <img src=${iconURL+ player4.profileIcon}.png alt='Player Icon' class='smallicon'></button>

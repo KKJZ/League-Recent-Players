@@ -4,12 +4,15 @@
 
 body {
 	font-family: 'Carrois Gothic SC', sans-serif;
-	background-image: url('http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	background-image: url('http://www.lol-wallpapers.com/wp-content/uploads/2017/04/Blitzcrank-by-DarrenGeers-HD-Wallpaper-Artwork-Fan-Art-League-of-Legends-lol.jpg');
+	height: 100%;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	background-size: cover;
 	color: white;
+
 }
 
 header {
@@ -20,6 +23,7 @@ h1, h2, h3, h4, h5 {
 	margin: auto;
 	text-align: center;
 	padding: 10px;
+	font-size: 90%;
 }
 
 form {
@@ -177,21 +181,19 @@ figure.nav-link {
     width: 100%;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 426px) {
 	h1, h2, h3, h4, h5 {
-		font-size: 90%;
+		font-size: 100%;
 	}
 	body {
+		background-image: url('http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-blitzcrank.jpg');
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-position: center;
-		background-image: url('http://www.lol-wallpapers.com/wp-content/uploads/2017/04/Blitzcrank-by-DarrenGeers-HD-Wallpaper-Artwork-Fan-Art-League-of-Legends-lol.jpg');
 		height: 100%;
-		background-size: cover;
-
 	}
 
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) {
 
 }

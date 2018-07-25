@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php header("Access-Control-Allow-Origin: *"); ?>
+<?php header("Access-Control-Allow-Origin: https://kkjz.github.io"); ?>
 <head>
 	<title>LoL Player Recent Players log</title>
 	<meta charset="utf-8">

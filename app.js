@@ -1,4 +1,4 @@
-const RIOT_ENDPOINT = 'https://na1.api.riotgames.com';
+const RIOT_ENDPOINT = 'https://cors-anywhere.herokuapp.com/https://na1.api.riotgames.com';
 const apiKey = 'RGAPI-0cc67426-438c-47ea-b987-18392ffad0aa';
 
 //add the id for the icon + .png

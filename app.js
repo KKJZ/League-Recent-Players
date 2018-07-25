@@ -17,6 +17,7 @@ function handleSubmit () {
 		$('button.reset').removeClass('hidden');
 		const name = $('input').val();
 		$('input').val('');
+		$.('div.player-name').html('');
 		$('.game-1').html('');
 		$('.game-2').html('');
 		$('.game-3').html('');				

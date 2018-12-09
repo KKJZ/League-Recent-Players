@@ -7,7 +7,7 @@
   <li>Javascript</li>
   <li>jQuery</li>
 </ul>
-<h2>Description</h2>
+<h2>Description:</h2>
 <p>Give users a view of players from previous matches.  Allows users to search different summoners for their last matches.</p>
 <a href='https://kkjz.github.io/League-Recent-Players/Welcome.html'>Live App</a>
 
